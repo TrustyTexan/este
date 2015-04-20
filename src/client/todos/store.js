@@ -1,10 +1,14 @@
 import * as actions from './actions';
 import {Range, Record} from 'immutable';
-import {getRandomString} from '../../lib/getrandomstring';
 import {newTodoCursor, todosCursor} from '../state';
 import {register} from '../dispatcher';
 
-// Isomorphic store has to be state-less.
+
+function getRandomString () {
+  var x = 2147483648;
+  return Math.floor(Math.random() * x).toString(36) +
+         Math.abs(Math.floor(Math.random() * x) ^ Date.now()).toString(36);
+}
 
 const TodoItem = Record({
   id: '',

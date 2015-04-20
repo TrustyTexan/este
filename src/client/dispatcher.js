@@ -1,17 +1,18 @@
-import {Dispatcher} from 'flux'
+import {Dispatcher} from 'flux';
 
-const dispatcher = new Dispatcher
+const dispatcher = new Dispatcher;
 
-export function register(callback: Function): string {
-  return dispatcher.register(callback)
+export function register (callback: Function): string {
+  return dispatcher.register(callback);
 }
 
-export function dispatch(action: Function, data: ?Object) {
-  if ('production' != process.env.NODE_ENV) {
-    console.log(action)
-    if (action.toString == Function.prototype.toString)
-      throw new Error('Action toString has to be overridden with dispatcher.setToString.')
+export function dispatch (action: Function, data: ?Object) {
+  if (process.env.NODE_ENV !== 'production') {
+    console.log(action);
+    if (action.toString === Function.prototype.toString) {
+      throw new Error('Action toString has to be overridden with dispatcher.setToString.');
+    }
   }
 
-  dispatcher.dispatch({action, data})
+  dispatcher.dispatch({action, data});
 }

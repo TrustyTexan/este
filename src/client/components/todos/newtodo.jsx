@@ -1,6 +1,6 @@
 import React from 'react';
 import immutable from 'immutable';
-import {addTodo, onNewTodoFieldChange} from '../../todos/actions';
+import {addTodo, onNewTodoFieldChange} from '../../actions/TodoActions';
 import {addons} from 'react/addons';
 
 export default React.createClass({

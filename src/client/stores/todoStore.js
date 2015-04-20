@@ -1,4 +1,4 @@
-import * as actions from './actions';
+import * as actions from '../actions/TodoActions';
 import {Range, Record} from 'immutable';
 import {newTodoCursor, todosCursor} from '../state';
 import {register} from '../dispatcher';

@@ -1,8 +1,5 @@
 import State from '../lib/state';
 
-const initialState = require('../server/initialstate');
-
-export const state = new State(initialState);
-export const newTodoCursor = state.cursor(['newTodo']);
-export const todosCursor = state.cursor(['todos']);
-export const userCursor = state.cursor(['user']);
+export const state = new State({});
+export const newTodoCursor = state.cursor(['newTodo'], { title: '' });
+export const todosCursor = state.cursor(['todos'], []);

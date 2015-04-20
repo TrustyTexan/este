@@ -2,7 +2,7 @@ import App from './components/app';
 import Home from './pages/home';
 import NotFound from './pages/notfound';
 import React from 'react';
-import Todos from './pages/index';
+import Todos from './pages/todos';
 import {DefaultRoute, NotFoundRoute, Route} from 'react-router';
 
 export default (

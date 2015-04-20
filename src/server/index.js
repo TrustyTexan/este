@@ -1,4 +1,4 @@
-var config = require('./config')
+var config = require('./config');
 
 if (config.isProduction || require('piping')(config.piping)) {
   if (!process.env.NODE_ENV)
@@ -9,8 +9,10 @@ if (config.isProduction || require('piping')(config.piping)) {
 
   require('babel/register');
   // To ignore webpack custom loaders on server.
-  config.webpackStylesExtensions.forEach(function(ext) {
-    require.extensions['.' + ext] = function() {}
+  config.webpackStylesExtensions.forEach(function (ext) {
+    require.extensions['.' + ext] = function () {};
   });
+
+
   require('./main');
 }

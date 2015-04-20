@@ -2,7 +2,7 @@ import React from 'react';
 import classnames from 'classnames';
 import immutable from 'immutable';
 import {addons} from 'react/addons';
-import {deleteTodo} from '../../actions/todoActions';
+import {deleteTodo} from '../../actions/TodoActions';
 
 export default React.createClass({
   mixins: [addons.PureRenderMixin],

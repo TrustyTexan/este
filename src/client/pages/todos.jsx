@@ -2,7 +2,7 @@ import DocumentTitle from 'react-document-title';
 import NewTodo from '../components/todos/newtodo';
 import React from 'react';
 import TodoList from '../components/todos/todolist';
-import {addHundredTodos, clearAll} from '../actions/TodoActions';
+import {addHundredTodos, clearAll} from '../actions/todoActions';
 import {getNewTodo, getTodos} from '../stores/todoStore';
 import {state} from '../state';
 

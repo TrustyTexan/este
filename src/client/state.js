@@ -1,5 +1,12 @@
 import State from '../lib/State';
 
-export const state = new State({});
-export const newTodoCursor = state.cursor(['newTodo'], { title: '' });
-export const todosCursor = state.cursor(['todos'], []);
+var initialState = {
+  newTodo: {
+    title: ''
+  },
+  todos: []
+};
+
+export const state = new State(initialState);
+export const newTodoCursor = state.cursor(['newTodo']);
+export const todosCursor = state.cursor(['todos']);

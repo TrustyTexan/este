@@ -40,15 +40,7 @@ export default class State extends EventEmitter {
         this.set(this._state.updateIn(path, update));
       }
       else {
-        var resp = this._state.getIn(path);
-        if (typeof resp === 'undefined') {
-          this.set(this._state.setIn(path, Immutable.fromJS(defaultVal)));
-          console.log(this._state.getIn(path));
-          return this._state.getIn(path);
-        }
-        else {
-          return resp;
-        }
+        return this._state.getIn(path);
       }
     };
   }

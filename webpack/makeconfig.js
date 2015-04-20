@@ -1,30 +1,29 @@
 /* @flow weak */
 
-"use strict"
-
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
-var NotifyPlugin = require('./notifyplugin')
-var path = require('path')
-var webpack = require('webpack')
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var NotifyPlugin = require('./notifyplugin');
+var path = require('path');
+var webpack = require('webpack');
 
 var loaders = {
   'css': 'css-loader',
   'less': 'css-loader!less-loader',
   'scss|sass': 'css-loader!sass-loader',
   'styl': 'css-loader!stylus-loader'
-}
+};
 
-module.exports = function(isDevelopment) {
+module.exports = function (isDevelopment) {
 
-  function stylesLoaders() {
-    return Object.keys(loaders).map(function(ext) {
+  function stylesLoaders () {
+    return Object.keys(loaders).map(function (ext) {
       var loader = isDevelopment ? 'style-loader!' + loaders[ext] :
-        ExtractTextPlugin.extract('style-loader', loaders[ext])
+        ExtractTextPlugin.extract('style-loader', loaders[ext]);
+
       return {
         loader: loader,
         test: new RegExp('\\.(' + ext + ')$')
-      }
-    })
+      };
+    });
   }
 
   var config = {
@@ -76,7 +75,7 @@ module.exports = function(isDevelopment) {
       path: 'build/',
       filename: '[name].js'
     },
-    plugins: (function() {
+    plugins: (function () {
       var plugins = [
         new webpack.DefinePlugin({
           'process.env': {
@@ -84,14 +83,14 @@ module.exports = function(isDevelopment) {
             IS_BROWSER: true
           }
         })
-      ]
+      ];
       if (isDevelopment)
         plugins.push(
           NotifyPlugin,
           new webpack.HotModuleReplacementPlugin(),
           // Tell reloader to not reload if there is an error.
           new webpack.NoErrorsPlugin()
-        )
+        );
       else
         plugins.push(
           // Render styles into separate cacheable file to prevent FOUC and
@@ -106,15 +105,15 @@ module.exports = function(isDevelopment) {
               warnings: false
             }
           })
-        )
-      return plugins
+        );
+      return plugins;
     })(),
     resolve: {
       // To allow require('file') instead of require('file.jsx')
       extensions: ['', '.js', '.jsx', '.json']
-    },
-  }
+    }
+  };
 
-  return config
+  return config;
 
-}
+};

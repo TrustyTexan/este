@@ -1,8 +1,8 @@
 import App from './components/app';
 import Home from './components/home';
-import NotFound from './components/notfound';
+import NotFound from './pages/notfound';
 import React from 'react';
-import Todos from './components/todos';
+import Todos from './pages/index';
 import {DefaultRoute, NotFoundRoute, Route} from 'react-router';
 
 export default (

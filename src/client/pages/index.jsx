@@ -1,13 +1,13 @@
 import DocumentTitle from 'react-document-title';
-import NewTodo from './newtodo';
+import NewTodo from '../components/todos/newtodo';
 import React from 'react';
-import TodoList from './todolist';
-import {addHundredTodos, clearAll} from '../../todos/actions';
-import {getNewTodo, getTodos} from '../../todos/store';
-import {state} from '../../state';
+import TodoList from '../components/todos/todolist';
+import {addHundredTodos, clearAll} from '../todos/actions';
+import {getNewTodo, getTodos} from '../todos/store';
+import {state} from '../state';
 
 // Leverage webpack require goodness for feature toggle based dead code removal.
-require('../../../../assets/css/todos.styl');
+require('../../../assets/css/todos.styl');
 
 // Naïve undo implementation.
 const undoStates = [];

@@ -1,4 +1,4 @@
-import State from '../lib/state';
+import State from '../lib/State';
 
 export const state = new State({});
 export const newTodoCursor = state.cursor(['newTodo'], { title: '' });

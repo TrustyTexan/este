@@ -4,7 +4,7 @@ import {Link} from 'react-router';
 
 export default React.createClass({
 
-  displayName: 'notfound',
+  displayName: 'NotFound',
 
   render () {
     return (

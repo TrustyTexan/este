@@ -1,5 +1,5 @@
 import React from 'react';
-import TodoItem from './todoitem';
+import TodoItem from './TodoItem';
 import immutable from 'immutable';
 import {addons} from 'react/addons';
 
@@ -7,7 +7,7 @@ export default React.createClass({
   // Try add hunderds todos. Typing new todo is still superfast.
   mixins: [addons.PureRenderMixin],
 
-  displayName: 'todolist',
+  displayName: 'TodoList',
 
   propTypes: {
     // Whenever component prop is an immutable structure, use PureRenderMixin.

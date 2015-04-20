@@ -7,7 +7,7 @@ import {state} from '../state';
 require('../../../assets/css/app.styl');
 
 export default React.createClass({
-  displayName: 'app',
+  displayName: 'App',
 
   componentDidMount () {
     // Must be required here because there is no DOM in Node.js. Rememeber,

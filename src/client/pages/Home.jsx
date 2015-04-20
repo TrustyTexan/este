@@ -3,7 +3,7 @@ import {Link} from 'react-router';
 
 export default React.createClass({
 
-  displayName: 'home',
+  displayName: 'Home',
 
   render () {
     return (

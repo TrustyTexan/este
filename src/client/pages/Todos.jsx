@@ -1,7 +1,7 @@
 import DocumentTitle from 'react-document-title';
 import NewTodo from '../components/todos/newtodo';
 import React from 'react';
-import TodoList from '../components/todos/todolist';
+import TodoList from '../components/todos/TodoList';
 import {addHundredTodos, clearAll} from '../actions/todoActions';
 import {getNewTodo, getTodos} from '../stores/todoStore';
 import {state} from '../state';
@@ -14,7 +14,7 @@ const undoStates = [];
 
 export default React.createClass({
 
-  displayName: 'todos',
+  displayName: 'Todos',
 
   componentDidMount () {
     state.on('change', this.onStateChange);

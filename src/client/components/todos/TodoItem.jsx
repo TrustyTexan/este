@@ -7,7 +7,7 @@ import {deleteTodo} from '../../actions/todoActions';
 export default React.createClass({
   mixins: [addons.PureRenderMixin],
 
-  displayName: 'todoitem',
+  displayName: 'TodoItem',
 
   propTypes: {
     todo: React.PropTypes.instanceOf(immutable.Map)

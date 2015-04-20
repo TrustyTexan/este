@@ -1,5 +1,8 @@
 {
-  "name": "reactstarter",
+  "name": "este-app",
+  "description": "Robust and comfortable dev stack for isomorphic web apps",
+  "author": "Daniel Steigerwald",
+  "version": "9.0.0",
   "private": true,
   "scripts": {
     "postinstall": "gulp build --production",
@@ -27,6 +30,7 @@
     "immutable": "^3.6.4",
     "less-loader": "^2.0.0",
     "node-notifier": "^4.1.0",
+    "normalize.css": "^3.0.2",
     "piping": "^0.1.6",
     "react": "^0.12.2",
     "react-document-title": "^1.0.0",

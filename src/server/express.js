@@ -1,36 +1,21 @@
-import React from 'react'
-import compression from 'compression'
-import config from './config'
-import express from 'express'
-import favicon from 'serve-favicon'
-import render from './render'
+import compression from 'compression';
+import config from './config';
+import express from 'express';
+import path from 'path';
 
-export default function() {
+export default function () {
 
-  let app = express()
+  let app = express();
 
-  app.use(compression())
-  // TODO: Add favicon.
-  // app.use(favicon('assets/img/favicon.ico'))
-  // TODO: Move to CDN.
-  app.use('/build', express.static('build'))
-  app.use('/assets', express.static('assets'))
+  app.use(compression());
+  app.use('/', express.static(path.join(__dirname, '/../../')));
 
-  app.get('*', (req, res) => {
-    let acceptsLanguages = req.acceptsLanguages(config.appLocales)
-    render(req.path, acceptsLanguages || config.defaultLocale)
-      .then((result) => {
-        res.status(result.status).send(result.html)
-      })
-      .catch((error) => {
-        let msg = error.stack || error
-        console.log(msg)
-        res.status(500).send('500: ' + msg)
-      })
-  })
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '/../../'));
+  });
 
-  app.listen(config.port)
+  app.listen(config.port);
 
-  console.log(`App started on port ${config.port}`)
+  console.log(`App started on port ${config.port}`);
 
 }

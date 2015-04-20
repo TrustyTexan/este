@@ -1,7 +1,6 @@
-import config from './config'
-import messages from '../client/messages'
+import messages from '../client/messages';
 
-let initialLocale = 'en'
+let initialLocale = 'en';
 
 export default {
   i18n: {
@@ -15,4 +14,4 @@ export default {
     {id: 2, title: 'relax'}
   ],
   user: {}
-}
+};

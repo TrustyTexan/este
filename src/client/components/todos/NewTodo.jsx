@@ -6,7 +6,7 @@ import {addons} from 'react/addons';
 export default React.createClass({
   mixins: [addons.PureRenderMixin],
 
-  displayName: 'newtodo',
+  displayName: 'NewTodo',
 
   propTypes: {
     todo: React.PropTypes.instanceOf(immutable.Map)

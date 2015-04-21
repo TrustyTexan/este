@@ -31,7 +31,6 @@ npm install
 
 - run `gulp`
 - point your browser to [localhost:8000](http://localhost:8000)
-- build something beautiful
 
 ## Dev Tasks
 
@@ -53,7 +52,7 @@ Code is documentation itself as it illustrates various patterns, but for start y
 ## Links
 
 - [ST3 ESLint Setup Part 1](https://medium.com/@dan_abramov/lint-like-it-s-2015-6987d44c5b48)
-- [ST3 ESLint Setup Part 2](https://github.com/yannickcr/eslint-plugin-react)
+- [ST3 ESLint Setup Part 2 (JSX)](https://github.com/yannickcr/eslint-plugin-react)
 - [ESLint Rules](http://eslint.org/docs/rules/)
 
 
